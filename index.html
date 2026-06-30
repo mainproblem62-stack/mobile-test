@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary SEO Meta Tags -->
+    <title>Zeeshan Mobile Zone | Premium Apple iPhones & Flagship Devices</title>
+    <meta name="description" content="Explore premium flagship iPhones at Zeeshan Mobile Zone. From iPhone X to the latest iPhone 15 Pro, enjoy unbeatable quality, authentic specs, and premium service.">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Technical SEO: Canonical Placeholder -->
+    <link rel="canonical" href="https://www.zeeshanmobilezone.com/" />
+
+    <!-- Open Graph / Facebook Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.zeeshanmobilezone.com/">
+    <meta property="og:title" content="Zeeshan Mobile Zone | Premium Apple iPhones">
+    <meta property="og:description" content="Explore premium flagship iPhones at Zeeshan Mobile Zone. Premium quality, authentic specs, and premium service.">
+    <meta property="og:image" content="IMAGE_URL_PLACEHOLDER/og-image.jpg">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://www.zeeshanmobilezone.com/">
+    <meta name="twitter:title" content="Zeeshan Mobile Zone | Premium Apple iPhones">
+    <meta name="twitter:description" content="Explore premium flagship iPhones at Zeeshan Mobile Zone. Premium quality, authentic specs, and premium service.">
+    <meta name="twitter:image" content="IMAGE_URL_PLACEHOLDER/twitter-image.jpg">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- 
+        TECHNICAL SEO: Structured Data Placeholder (Product Schema Markup)
+        Below is an example of where your Product schema injection should go. 
+        For a multi-product catalog page, an ItemList schema pointing to individual Product schemas is ideal.
+    -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Zeeshan Mobile Zone Catalog",
+      "description": "Premium collection of flagships and Apple iPhones.",
+      "url": "https://www.zeeshanmobilezone.com/",
+      "mainEntity": {
+        "@type": "ItemList",
+        "itemListElement": [
+          /* Dynamic or static Product JSON objects go here for individual indexing */
+        ]
+      }
+    }
+    </script>
+
+    <style>
+        /* Modern Reset & Theme Customization */
+        :root {
+            --bg-dark: #0b0f19;
+            --bg-card: #151c2c;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --accent-blue: #3b82f6;
+            --accent-hover: #1d4ed8;
+            --border-color: #24324d;
+            --font-stack: 'Inter', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-stack);
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        /* Container Layout Utility */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navbar Layout */
+        .header {
+            background-color: rgba(21, 28, 44, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            color: var(--text-main);
+        }
+
+        .logo span {
+            color: var(--accent-blue);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--accent-blue);
+        }
+
+        /* Hero Callout Section */
+        .hero {
+            padding: 60px 0 40px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Product Grid Workspace */
+        .catalog-section {
+            padding: 40px 0 80px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        /* Product Card */
+        .product-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-blue);
+            box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.15);
+        }
+
+        /* Image Window Placeholder Layout */
+        .product-image-box {
+            background-color: rgba(0, 0, 0, 0.2);
+            width: 100%;
+            height: 240px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border-bottom: 1px solid var(--border-color);
+            position: relative;
+        }
+
+        .product-image-box img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            padding: 20px;
+        }
+
+        /* Product Context Metadata */
+        .product-details {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .product-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .product-specs {
+            list-style: none;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .product-specs li {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Dot icon before bullet strings */
+        .product-specs li::before {
+            content: "•";
+            color: var(--accent-blue);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: 2px;
+        }
+
+        .product-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: auto;
+            border-top: 1px solid var(--border-color);
+            padding-top: 16px;
+        }
+
+        .product-price {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .btn-view {
+            background-color: var(--accent-blue);
+            color: var(--text-main);
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-align: center;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn-view:hover {
+            background-color: var(--accent-hover);
+        }
+
+        /* Structural Footer Layer */
+        .footer {
+            background-color: #080c14;
+            border-top: 1px solid var(--border-color);
+            padding: 60px 0 30px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr repeat(2, 1fr);
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-info h3 {
+            color: var(--text-main);
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+        }
+
+        .footer-links h4 {
+            color: var(--text-main);
+            margin-bottom: 15px;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links ul li a:hover {
+            color: var(--accent-blue);
+        }
+
+        /* HTML Sitemap Bot/Crawler Crawl Map block style optimization */
+        .sitemap-column ul {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 8px;
+        }
+        
+        .sitemap-column ul li a {
+            font-size: 0.82rem;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--border-color);
+            padding-top: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 768px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .navbar {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+                gap: 15px;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header & Navigation Bar -->
+    <header class="header">
+        <div class="container navbar">
+            <a href="#" class="logo">Zeeshan<span>Mobile</span></a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#" class="active">Catalog</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Content Focus Block -->
+    <section class="hero">
+        <div class="container">
+            <h1>Premium Smartphone Catalog</h1>
+            <p>Discover hand-picked flagship iPhones configured with exceptional premium builds and deep high-tier technical specifications.</p>
+        </div>
+    </section>
+
+    <!-- Main Dynamic Inventory Grid Ecosystem -->
+    <main class="container catalog-section">
+        <div class="product-grid">
+
+            <!-- Card 1: Apple iPhone X -->
+            <article class="product-card">
+                <div class="product-image-box">
+                    <img src="https://res.cloudinary.com/ducegbbqd/image/upload/v1782798983/iphone_x_qe55ne.jpg">
+                </div>
+                <div class="product-details">
+                    <h2 class="product-title">Apple iPhone X</h2>
+                    <ul class="product-specs">
+                        <li>Silver / Space Gray Finish</li>
+                        <li>Advanced Dual Camera System</li>
+                        <li>Secure Face ID Biometrics</li>
+                    </ul>
+                    <div class="product-footer">
+                        <span class="product-price">$299</span>
+                        <a href="products/iphone-x.html" class="btn-view">View Details</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 2: Apple iPhone 11 -->
+            <article class="product-card">
+                <div class="product-image-box">
+                    <img src="IMAGE_URL_PLACEHOLDER/iphone-11.jpg" alt="Apple iPhone 11 Purple variation with Liquid Retina HD Display">
+                </div>
+                <div class="product-details">
+                    <h2 class="product-title">Apple iPhone 11</h2>
+                    <ul class="product-specs">
+                        <li>Signature Purple Colorway</li>
+                        <li>Liquid Retina HD Display</li>
+                        <li>Dual 12MP Ultra Wide Cameras</li>
+                    </ul>
+                    <div class="product-footer">
+                        <span class="product-price">$399</span>
+                        <a href="products/iphone-11.html" class="btn-view">View Details</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 3: Apple iPhone 11 Pro -->
+            <article class="product-card">
+                <div class="product-image-box">
+                    <img src="IMAGE_URL_PLACEHOLDER/iphone-11-pro.jpg" alt="Apple iPhone 11 Pro Midnight Green color profile highlighting premium Matte Glass texture">
+                </div>
+                <div class="product-details">
+                    <h2 class="product-title">Apple iPhone 11 Pro</h2>
+                    <ul class="product-specs">
+                        <li>Midnight Green Luxury Tint</li>
+                        <li>Triple Lens Photographic Array</li>
+                        <li>Matte Glass Textured Backing</li>
+                    </ul>
+                    <div class="product-footer">
+                        <span class="product-price">$499</span>
+                        <a href="products/iphone-11-pro.html" class="btn-view">View Details</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 4: Apple iPhone 12 -->
+            <article class="product-card">
+                <div class="product-image-box">
+                    <img src="IMAGE_URL_PLACEHOLDER/iphone-12.jpg" alt="Apple iPhone 12 Deep Blue form factor display showing Ceramic Shield glass styling">
+                </div>
+                <div class="product-details">
+                    <h2 class="product-title">Apple iPhone 12</h2>
+                    <ul class="product-specs">
+                        <li>Stunning Blue Glass Frame</li>
+                        <li>Super Retina XDR Bright Panel</li>
+                        <li>Ceramic Shield Protection & 5G</li>
+                    </ul>
+                    <div class="product-footer">
+                        <span class="product-price">$549</span>
+                        <a href="products/iphone-12.html" class="btn-view">View Details</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 5: Apple iPhone 12 Pro -->
+            <article class="product-card">
+                <div class="product-image-box">
+                    <img src="IMAGE_URL_PLACEHOLDER/iphone-12-pro.jpg" alt="Apple iPhone 12 Pro Pacific Blue premium surgical-grade stainless steel frame">
+                </div>
+                <div class="product-details">
+                    <h2 class="product-title">Apple iPhone 12 Pro</h2>
+                    <ul class="product-specs">
+                        <li>Pacific Blue Signature Edition</li>
+                        <li>LiDAR Scanner Depth Sensing</li>
+                        <li>Surgical-Grade Stainless Steel</li>
+                    </ul>
+                    <div class="product-footer">
+                        <span class="product-price">$649</span>
+                        <a href="products/iphone-12-pro.html" class="btn-view">View Details</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 6: Apple iPhone 13 -->
+            <article class="product-card">
+                <div class="product-image-box">
+                    <img src="IMAGE_URL_PLACEHOLDER/iphone-13.jpg" alt="Apple iPhone 13 Diagonal Camera Layout previewing Cinematic Video capabilities">
+                </div>
+                <div class="product-details">
+                    <h2 class="product-title">Apple iPhone 13</h2>
+                    <ul class="product-specs">
+                        <li>Vibrant Pink & Blue Variations</li>
+                        <li>Diagonal Dual Camera Layout</li>
+                        <li>Immersive Cinematic Video Mode</li>
+                    </ul>
+                    <div class="product-footer">
+                        <span class="product-price">$699</span>
+                        <a href="products/iphone-13.html" class="btn-view">View Details</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 7: Apple iPhone 13 Pro -->
+            <article class="product-card">
+                <div class="product-image-box">
+                    <img src="IMAGE_URL_PLACEHOLDER/iphone-13-pro.jpg" alt="Apple iPhone 13 Pro in Sierra Blue displaying ProMotion 120Hz display design">
+                </div>
+                <div class="product-details">
+                    <h2 class="product-title">Apple iPhone 13 Pro</h2>
+                    <ul class="product-specs">
+                        <li>Sierra Blue & Graphite Tones</li>
+                        <li>ProMotion 120Hz Fluid Tech</li>
+                        <li>Macro Photography Framework</li>
+                    </ul>
+                    <div class="product-footer">
+                        <span class="product-price">$799</span>
+                        <a href="products/iphone-13-pro.html" class="btn-view">View Details</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 8: Apple iPhone 14 -->
+            <article class="product-card">
+                <div class="product-image-box">
+                    <img src="IMAGE_URL_PLACEHOLDER/iphone-14.jpg" alt="Apple iPhone 14 structural overview detailing Emergency SOS and Action Mode camera module">
+                </div>
+                <div class="product-details">
+                    <h2 class="product-title">Apple iPhone 14</h2>
+                    <ul class="product-specs">
+                        <li>Midnight & Starlight Outer Finishes</li>
+                        <li>Ultra-Stable Action Video Mode</li>
+                        <li>Emergency SOS Via Satellite</li>
+                    </ul>
+                    <div class="product-footer">
+                        <span class="product-price">$799</span>
+                        <a href="products/iphone-14.html" class="btn-view">View Details</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 9: Apple iPhone 14 Pro Max -->
+            <article class="product-card">
+                <div class="product-image-box">
+                    <img src="IMAGE_URL_PLACEHOLDER/iphone-14-pro-max.jpg" alt="Apple iPhone 14 Pro Max Deep Purple showcasing the active Dynamic Island interface">
+                </div>
+                <div class="product-details">
+                    <h2 class="product-title">Apple iPhone 14 Pro Max</h2>
+                    <ul class="product-specs">
+                        <li>Deep Purple Statement Hue</li>
+                        <li>Dynamic Island Active Interface</li>
+                        <li>Hi-Res 48MP Professional Camera</li>
+                    </ul>
+                    <div class="product-footer">
+                        <span class="product-price">$999</span>
+                        <a href="products/iphone-14-pro-max.html" class="btn-view">View Details</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 10: Apple iPhone 15 Pro -->
+            <article class="product-card">
+                <div class="product-image-box">
+                    <img src="IMAGE_URL_PLACEHOLDER/iphone-15-pro.jpg" alt="Apple iPhone 15 Pro in Natural Titanium showing side profile Action Button integration">
+                </div>
+                <div class="product-details">
+                    <h2 class="product-title">Apple iPhone 15 Pro</h2>
+                    <ul class="product-specs">
+                        <li>Natural Titanium Aerospace Core</li>
+                        <li>Customizable Action Button</li>
+                        <li>A17 Pro Flagship Silicon Chip</li>
+                    </ul>
+                    <div class="product-footer">
+                        <span class="product-price">$1099</span>
+                        <a href="products/iphone-15-pro.html" class="btn-view">View Details</a>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </main>
+
+    <!-- Structural Bottom Grid Layer containing HTML Sitemap crawl mapping -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-info">
+                <h3>Zeeshan Mobile Zone</h3>
+                <p>Bringing you the fine frontier of elite Apple hardware configurations. Sleek builds, optimized architectures, and absolute authenticity guaranteed.</p>
+            </div>
+            
+            <div class="footer-links">
+                <h4>Categories</h4>
+                <ul>
+                    <li><a href="#">Apple iPhones</a></li>
+                    <li><a href="#">Pro Series Devices</a></li>
+                    <li><a href="#">Latest Flagships</a></li>
+                    <li><a href="#">Premium Accessories</a></li>
+                </ul>
+            </div>
+
+            <!-- HTML Sitemap Component Node for SEO Web Crawler Deep Indexing -->
+            <div class="footer-links sitemap-column">
+                <h4>HTML Sitemap</h4>
+                <ul>
+                    <li><a href="products/iphone-x.html">Apple iPhone X Specs</a></li>
+                    <li><a href="products/iphone-11.html">Apple iPhone 11 Specs</a></li>
+                    <li><a href="products/iphone-11-pro.html">Apple iPhone 11 Pro Specs</a></li>
+                    <li><a href="products/iphone-12.html">Apple iPhone 12 Specs</a></li>
+                    <li><a href="products/iphone-12-pro.html">Apple iPhone 12 Pro Specs</a></li>
+                    <li><a href="products/iphone-13.html">Apple iPhone 13 Specs</a></li>
+                    <li><a href="products/iphone-13-pro.html">Apple iPhone 13 Pro Specs</a></li>
+                    <li><a href="products/iphone-14.html">Apple iPhone 14 Specs</a></li>
+                    <li><a href="products/iphone-14-pro-max.html">Apple iPhone 14 Pro Max Specs</a></li>
+                    <li><a href="products/iphone-15-pro.html">Apple iPhone 15 Pro Specs</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Zeeshan Mobile Zone. All rights reserved.</p>
+            <p>Designed for search crawl compliance and dynamic layouts.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
