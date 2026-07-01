@@ -9,48 +9,27 @@
     <meta name="description" content="Explore premium flagship iPhones at Zeeshan Mobile Zone. From iPhone X to the latest iPhone 15 Pro, enjoy unbeatable quality, authentic specs, and premium service.">
     <meta name="robots" content="index, follow">
     
-    <!-- Technical SEO: Canonical Placeholder -->
-    <link rel="canonical" href="https://www.zeeshanmobilezone.com/" />
+    <!-- Technical SEO: Updated Canonical Link -->
+    <link rel="canonical" href="https://mainproblem62-stack.github.io/mobile-test/" />
 
     <!-- Open Graph / Facebook Meta Tags -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.zeeshanmobilezone.com/">
+    <meta property="og:url" content="https://mainproblem62-stack.github.io/mobile-test/">
     <meta property="og:title" content="Zeeshan Mobile Zone | Premium Apple iPhones">
     <meta property="og:description" content="Explore premium flagship iPhones at Zeeshan Mobile Zone. Premium quality, authentic specs, and premium service.">
-    <meta property="og:image" content="IMAGE_URL_PLACEHOLDER/og-image.jpg">
+    <meta property="og:image" content="https://res.cloudinary.com/ducegbbqd/image/upload/v1782797234/cld-sample-2.jpg">
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://www.zeeshanmobilezone.com/">
+    <meta name="twitter:url" content="https://mainproblem62-stack.github.io/mobile-test/">
     <meta name="twitter:title" content="Zeeshan Mobile Zone | Premium Apple iPhones">
     <meta name="twitter:description" content="Explore premium flagship iPhones at Zeeshan Mobile Zone. Premium quality, authentic specs, and premium service.">
-    <meta name="twitter:image" content="IMAGE_URL_PLACEHOLDER/twitter-image.jpg">
+    <meta name="twitter:image" content="https://res.cloudinary.com/ducegbbqd/image/upload/v1782797234/cld-sample-2.jpg">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- 
-        TECHNICAL SEO: Structured Data Placeholder (Product Schema Markup)
-        Below is an example of where your Product schema injection should go. 
-        For a multi-product catalog page, an ItemList schema pointing to individual Product schemas is ideal.
-    -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "CollectionPage",
-      "name": "Zeeshan Mobile Zone Catalog",
-      "description": "Premium collection of flagships and Apple iPhones.",
-      "url": "https://www.zeeshanmobilezone.com/",
-      "mainEntity": {
-        "@type": "ItemList",
-        "itemListElement": [
-          /* Dynamic or static Product JSON objects go here for individual indexing */
-        ]
-      }
-    }
-    </script>
 
     <style>
         /* Modern Reset & Theme Customization */
@@ -77,6 +56,11 @@
             color: var(--text-main);
             line-height: 1.6;
             overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        body.modal-open {
+            overflow: hidden;
         }
 
         a {
@@ -85,7 +69,6 @@
             transition: color 0.2s ease;
         }
 
-        /* Container Layout Utility */
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -136,29 +119,53 @@
             color: var(--accent-blue);
         }
 
-        /* Hero Callout Section */
+        /* Hero Banner Section using your Cloudinary Header Asset */
         .hero {
-            padding: 60px 0 40px;
+            background: linear-gradient(rgba(11, 15, 25, 0.85), rgba(11, 15, 25, 0.95)), url('https://res.cloudinary.com/ducegbbqd/image/upload/v1782797234/cld-sample-2.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 100px 0 80px;
             text-align: center;
+            border-bottom: 1px solid var(--border-color);
         }
 
         .hero h1 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             font-weight: 700;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             letter-spacing: -1px;
+            text-shadow: 0 4px 12px rgba(0,0,0,0.5);
         }
 
         .hero p {
-            color: var(--text-muted);
-            font-size: 1.1rem;
-            max-width: 600px;
+            color: var(--text-main);
+            font-size: 1.2rem;
+            max-width: 650px;
             margin: 0 auto;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent-blue);
+            margin: 10px auto 0;
+            border-radius: 2px;
         }
 
         /* Product Grid Workspace */
         .catalog-section {
-            padding: 40px 0 80px;
+            padding: 60px 0;
         }
 
         .product-grid {
@@ -184,7 +191,6 @@
             box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.15);
         }
 
-        /* Image Window Placeholder Layout */
         .product-image-box {
             background-color: rgba(0, 0, 0, 0.2);
             width: 100%;
@@ -194,7 +200,6 @@
             justify-content: center;
             overflow: hidden;
             border-bottom: 1px solid var(--border-color);
-            position: relative;
         }
 
         .product-image-box img {
@@ -202,9 +207,13 @@
             max-height: 100%;
             object-fit: contain;
             padding: 20px;
+            transition: transform 0.3s ease;
         }
 
-        /* Product Context Metadata */
+        .product-card:hover .product-image-box img {
+            transform: scale(1.05);
+        }
+
         .product-details {
             padding: 24px;
             display: flex;
@@ -232,7 +241,6 @@
             align-items: center;
         }
 
-        /* Dot icon before bullet strings */
         .product-specs li::before {
             content: "•";
             color: var(--accent-blue);
@@ -265,6 +273,8 @@
             font-size: 0.85rem;
             font-weight: 600;
             text-align: center;
+            border: none;
+            cursor: pointer;
             transition: background-color 0.2s ease;
         }
 
@@ -272,7 +282,216 @@
             background-color: var(--accent-hover);
         }
 
-        /* Structural Footer Layer */
+        /* PREMIUM DETAIL MODAL CONTAINER SYSTEM */
+        .info-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(5, 7, 13, 0.85);
+            backdrop-filter: blur(8px);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+            padding: 20px;
+        }
+
+        .info-modal.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .modal-body {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            width: 100%;
+            max-width: 650px;
+            max-height: 85vh;
+            overflow-y: auto;
+            position: relative;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            transform: translateY(-20px);
+            transition: transform 0.3s ease;
+            padding: 30px;
+        }
+
+        .info-modal.active .modal-body {
+            transform: translateY(0);
+        }
+
+        .modal-close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s ease;
+        }
+
+        .modal-close-btn:hover {
+            background: rgba(239, 68, 68, 0.2);
+            border-color: #ef4444;
+        }
+
+        .modal-img-container {
+            width: 100%;
+            height: 260px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 12px;
+            margin-bottom: 25px;
+            border: 1px solid var(--border-color);
+        }
+
+        .modal-img-container img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            padding: 15px;
+        }
+
+        .modal-phone-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: var(--text-main);
+        }
+
+        .modal-phone-price {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--accent-blue);
+            margin-bottom: 20px;
+        }
+
+        .modal-specs-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 25px;
+        }
+
+        .modal-specs-table tr {
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .modal-specs-table td {
+            padding: 12px 6px;
+            font-size: 0.9rem;
+        }
+
+        .modal-specs-table td.label-cell {
+            color: var(--text-muted);
+            font-weight: 600;
+            width: 35%;
+        }
+
+        .modal-specs-table td.value-cell {
+            color: var(--text-main);
+        }
+
+        .modal-action-btn {
+            display: block;
+            width: 100%;
+            background-color: var(--accent-blue);
+            color: var(--text-main);
+            text-align: center;
+            padding: 14px;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background-color 0.2s ease;
+        }
+
+        .modal-action-btn:hover {
+            background-color: var(--accent-hover);
+        }
+
+        /* About Us Section Style */
+        .about-section {
+            padding: 60px 0;
+            background-color: rgba(21, 28, 44, 0.4);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .about-content {
+            max-width: 850px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.05rem;
+            color: var(--text-muted);
+        }
+
+        .about-content p {
+            margin-bottom: 20px;
+        }
+
+        /* Contact & Map Section Style */
+        .contact-section {
+            padding: 60px 0;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .contact-info {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 30px;
+            border-radius: 12px;
+            height: 100%;
+        }
+
+        .contact-item {
+            margin-bottom: 25px;
+        }
+
+        .contact-item h4 {
+            color: var(--accent-blue);
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .contact-item p {
+            color: var(--text-muted);
+        }
+
+        .map-box {
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            height: 340px;
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+
+        .map-box iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Footer Layer */
         .footer {
             background-color: #080c14;
             border-top: 1px solid var(--border-color);
@@ -283,7 +502,7 @@
 
         .footer-grid {
             display: grid;
-            grid-template-columns: 2fr repeat(2, 1fr);
+            grid-template-columns: 1.5fr 1fr 1.5fr;
             gap: 40px;
             margin-bottom: 40px;
         }
@@ -313,7 +532,6 @@
             color: var(--accent-blue);
         }
 
-        /* HTML Sitemap Bot/Crawler Crawl Map block style optimization */
         .sitemap-column ul {
             display: grid;
             grid-template-columns: 1fr;
@@ -321,7 +539,10 @@
         }
         
         .sitemap-column ul li a {
-            font-size: 0.82rem;
+            font-size: 0.8rem;
+            word-break: break-all;
+            display: block;
+            color: var(--text-muted);
         }
 
         .footer-bottom {
@@ -334,12 +555,14 @@
             gap: 15px;
         }
 
-        /* Responsive Breakpoints */
-        @media (max-width: 768px) {
+        @media (max-width: 992px) {
             .footer-grid {
                 grid-template-columns: 1fr;
                 gap: 30px;
             }
+        }
+
+        @media (max-width: 768px) {
             .navbar {
                 flex-direction: column;
                 height: auto;
@@ -348,6 +571,10 @@
             }
             .hero h1 {
                 font-size: 2rem;
+            }
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
             }
         }
     </style>
@@ -360,15 +587,15 @@
             <a href="#" class="logo">Zeeshan<span>Mobile</span></a>
             <nav>
                 <ul class="nav-links">
-                    <li><a href="#" class="active">Calog</a></li>
-                    <li><a href="#">Welcome to Zeeshan Mobile ZoneAt Zeeshan Mobile Zone, we believe that a smartphone is more than just a device—it is an extension of your daily lifestyle, a powerhouse for productivity, and a hub for your digital world. We specialize in bringing you the fine frontier of elite Apple hardware configurations, bridging the gap between premium tech and absolute authenticity.  From the timeless architecture of the iPhone X to the cutting-edge aerospace core of the latest iPhone 15 Pro, our curated catalog is hand-picked to deliver exceptional premium builds and deep, high-tier technical specifications.  Why Choose Us?Guaranteed Authenticity: Every flagship device in our inventory undergoes rigorous quality checks to ensure 100% genuine specs and uncompromised performance.  Premium Service: We don't just sell phones; we provide a premium end-to-end shopping experience backed by deep product expertise.  Unbeatable Quality: We focus on offering top-tier, pristine devices featuring signature colorways, luxury finishes, and advanced technical architectures.  Whether you are looking for an immersive Super Retina XDR display, a cinematic-grade photographic array, or the raw power of flagship silicon chips, Zeeshan Mobile Zone is your trusted destination for elite mobile technology. </a></li>
-                    <li><a href="#">Get in TouchHave a question about a specific device's specifications, availability, or pricing? Our dedicated premium support team is here to assist you in selecting your next flagship upgrade.  📧 Email Us: support@zeeshanmobilezone.com (Placeholder)📞 Call/WhatsApp: +1 (555) 019-2834 (Placeholder)📍 Visit Our Zone: 123 Premium Tech Boulevard, Suite 100 (Placeholder)Business HoursMonday – Saturday: 10:00 AM – 9:00 PMSunday: Closed (Online browsing open 24/7) </a></li>
+                    <li><a href="#catalog" class="active">Catalog</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Content Focus Block -->
+    <!-- Hero Section -->
     <section class="hero">
         <div class="container">
             <h1>Premium Smartphone Catalog</h1>
@@ -377,13 +604,13 @@
     </section>
 
     <!-- Main Dynamic Inventory Grid Ecosystem -->
-    <main class="container catalog-section">
+    <main id="catalog" class="container catalog-section">
         <div class="product-grid">
 
             <!-- Card 1: Apple iPhone X -->
             <article class="product-card">
                 <div class="product-image-box">
-                    <img src="https://res.cloudinary.com/ducegbbqd/image/upload/v1782798983/iphone_x_qe55ne.jpg">
+                    <img src="https://res.cloudinary.com/ducegbbqd/image/upload/v1782798983/iphone_x_qe55ne.jpg" alt="Apple iPhone X">
                 </div>
                 <div class="product-details">
                     <h2 class="product-title">Apple iPhone X</h2>
@@ -394,7 +621,7 @@
                     </ul>
                     <div class="product-footer">
                         <span class="product-price">$299</span>
-                        <a href="products/iphone-x.html" class="btn-view">View Details</a>
+                        <button class="btn-view" onclick="openDetailsModal('iPhone X', '$299', 'https://res.cloudinary.com/ducegbbqd/image/upload/v1782798983/iphone_x_qe55ne.jpg', '5.8-inch Super Retina OLED', 'Apple A11 Bionic', '64GB / 256GB', 'Dual 12MP (Wide, Telephoto)', '2716 mAh with Fast Charging')">View Details</button>
                     </div>
                 </div>
             </article>
@@ -402,7 +629,7 @@
             <!-- Card 2: Apple iPhone 11 -->
             <article class="product-card">
                 <div class="product-image-box">
-                    <img src="https://res.cloudinary.com/ducegbbqd/image/upload/v1782798982/iphone_11_xso7ti.jpg" alt="Apple iPhone 11 Purple variation with Liquid Retina HD Display">
+                    <img src="https://res.cloudinary.com/ducegbbqd/image/upload/v1782798982/iphone_11_xso7ti.jpg" alt="Apple iPhone 11">
                 </div>
                 <div class="product-details">
                     <h2 class="product-title">Apple iPhone 11</h2>
@@ -413,7 +640,7 @@
                     </ul>
                     <div class="product-footer">
                         <span class="product-price">$399</span>
-                        <a href="products/iphone-11.html" class="btn-view">View Details</a>
+                        <button class="btn-view" onclick="openDetailsModal('iPhone 11', '$399', 'https://res.cloudinary.com/ducegbbqd/image/upload/v1782798982/iphone_11_xso7ti.jpg', '6.1-inch Liquid Retina IPS LCD', 'Apple A13 Bionic', '64GB / 128GB / 256GB', 'Dual 12MP (Wide, Ultra-Wide)', '3110 mAh Liquid Battery')">View Details</button>
                     </div>
                 </div>
             </article>
@@ -421,7 +648,7 @@
             <!-- Card 3: Apple iPhone 11 Pro -->
             <article class="product-card">
                 <div class="product-image-box">
-                    <img src="https://res.cloudinary.com/ducegbbqd/image/upload/v1782798982/iphone_11_pro_zoa4aw.jpg" alt="Apple iPhone 11 Pro Midnight Green color profile highlighting premium Matte Glass texture">
+                    <img src="https://res.cloudinary.com/ducegbbqd/image/upload/v1782798982/iphone_11_pro_zoa4aw.jpg" alt="Apple iPhone 11 Pro">
                 </div>
                 <div class="product-details">
                     <h2 class="product-title">Apple iPhone 11 Pro</h2>
@@ -432,7 +659,7 @@
                     </ul>
                     <div class="product-footer">
                         <span class="product-price">$499</span>
-                        <a href="products/iphone-11-pro.html" class="btn-view">View Details</a>
+                        <button class="btn-view" onclick="openDetailsModal('iPhone 11 Pro', '$499', 'https://res.cloudinary.com/ducegbbqd/image/upload/v1782798982/iphone_11_pro_zoa4aw.jpg', '5.8-inch Super Retina XDR OLED', 'Apple A13 Bionic', '64GB / 256GB / 512GB', 'Triple 12MP (Wide, Ultra-Wide, Telephoto)', '3046 mAh Matte Protection Tech')">View Details</button>
                     </div>
                 </div>
             </article>
@@ -440,7 +667,7 @@
             <!-- Card 4: Apple iPhone 12 -->
             <article class="product-card">
                 <div class="product-image-box">
-                    <img src="https://res.cloudinary.com/ducegbbqd/image/upload/v1782798982/iphone_12_pro_qdmhqh.jpg" alt="Apple iPhone 12 Deep Blue form factor display showing Ceramic Shield glass styling">
+                    <img src="https://res.cloudinary.com/ducegbbqd/image/upload/v1782798983/iphone_x_1_uanegr.jpg" alt="Apple iPhone 12">
                 </div>
                 <div class="product-details">
                     <h2 class="product-title">Apple iPhone 12</h2>
@@ -451,7 +678,7 @@
                     </ul>
                     <div class="product-footer">
                         <span class="product-price">$549</span>
-                        <a href="products/iphone-12.html" class="btn-view">View Details</a>
+                        <button class="btn-view" onclick="openDetailsModal('iPhone 12', '$549', 'https://res.cloudinary.com/ducegbbqd/image/upload/v1782798983/iphone_x_1_uanegr.jpg', '6.1-inch Super Retina XDR OLED', 'Apple A14 Bionic (5nm)', '64GB / 128GB / 256GB', 'Dual 12MP (Wide, Ultra-Wide)', '2815 mAh with MagSafe Alignment')">View Details</button>
                     </div>
                 </div>
             </article>
@@ -459,7 +686,7 @@
             <!-- Card 5: Apple iPhone 12 Pro -->
             <article class="product-card">
                 <div class="product-image-box">
-                    <img src="https://res.cloudinary.com/ducegbbqd/image/upload/v1782798982/iphone_12_pro_qdmhqh.jpg" alt="Apple iPhone 12 Pro Pacific Blue premium surgical-grade stainless steel frame">
+                    <img src="https://res.cloudinary.com/ducegbbqd/image/upload/v1782798982/iphone_12_pro_qdmhqh.jpg" alt="Apple iPhone 12 Pro">
                 </div>
                 <div class="product-details">
                     <h2 class="product-title">Apple iPhone 12 Pro</h2>
@@ -470,7 +697,7 @@
                     </ul>
                     <div class="product-footer">
                         <span class="product-price">$649</span>
-                        <a href="products/iphone-12-pro.html" class="btn-view">View Details</a>
+                        <button class="btn-view" onclick="openDetailsModal('iPhone 12 Pro', '$649', 'https://res.cloudinary.com/ducegbbqd/image/upload/v1782798982/iphone_12_pro_qdmhqh.jpg', '6.1-inch Super Retina XDR OLED', 'Apple A14 Bionic with Neural Engine', '128GB / 256GB / 512GB', 'Triple 12MP Array with LiDAR Scanner', '2815 mAh High Performance Silicon')">View Details</button>
                     </div>
                 </div>
             </article>
@@ -478,18 +705,18 @@
             <!-- Card 6: Apple iPhone 13 -->
             <article class="product-card">
                 <div class="product-image-box">
-                    <img src="https://res.cloudinary.com/ducegbbqd/image/upload/v1782798982/iphone_15_pro_qkkjcc.jpg" alt="Apple iPhone 13 Diagonal Camera Layout previewing Cinematic Video capabilities">
+                    <img src="https://res.cloudinary.com/ducegbbqd/image/upload/v1782798982/iphone_14_crrpt1.jpg" alt="Apple iPhone 13">
                 </div>
                 <div class="product-details">
                     <h2 class="product-title">Apple iPhone 13</h2>
                     <ul class="product-specs">
-                        <li>Vibrant Pink & Blue Variations</li>
                         <li>Diagonal Dual Camera Layout</li>
                         <li>Immersive Cinematic Video Mode</li>
+                        <li>Enhanced Battery Life Configuration</li>
                     </ul>
                     <div class="product-footer">
                         <span class="product-price">$699</span>
-                        <a href="products/iphone-13.html" class="btn-view">View Details</a>
+                        <button class="btn-view" onclick="openDetailsModal('iPhone 13', '$699', 'https://res.cloudinary.com/ducegbbqd/image/upload/v1782798982/iphone_14_crrpt1.jpg', '6.1-inch Super Retina with ProMotion 120Hz', 'Apple A15 Bionic (5nm)', '128GB / 256GB / 512GB', 'Diagonal Dual 12MP featuring Sensor-Shift', '3227 mAh Long-Range Engine')">View Details</button>
                     </div>
                 </div>
             </article>
@@ -497,7 +724,7 @@
             <!-- Card 7: Apple iPhone 13 Pro -->
             <article class="product-card">
                 <div class="product-image-box">
-                    <img src="https://res.cloudinary.com/ducegbbqd/image/upload/v1782798983/iphone_14_pro_mjofqo.jpg" alt="Apple iPhone 13 Pro in Sierra Blue displaying ProMotion 120Hz display design">
+                    <img src="https://res.cloudinary.com/ducegbbqd/image/upload/v1782798983/iphone_14_pro_mjofqo.jpg" alt="Apple iPhone 13 Pro">
                 </div>
                 <div class="product-details">
                     <h2 class="product-title">Apple iPhone 13 Pro</h2>
@@ -508,7 +735,7 @@
                     </ul>
                     <div class="product-footer">
                         <span class="product-price">$799</span>
-                        <a href="products/iphone-13-pro.html" class="btn-view">View Details</a>
+                        <button class="btn-view" onclick="openDetailsModal('iPhone 13 Pro', '$799', 'https://res.cloudinary.com/ducegbbqd/image/upload/v1782798983/iphone_14_pro_mjofqo.jpg', '6.1-inch Super Retina with ProMotion 120Hz', 'Apple A15 Bionic (5-Core GPU)', '128GB / 256GB / 512GB / 1TB', 'Pro 12MP Camera System (Macro Capture)', '3095 mAh Fluid Tech Configuration')">View Details</button>
                     </div>
                 </div>
             </article>
@@ -516,7 +743,7 @@
             <!-- Card 8: Apple iPhone 14 -->
             <article class="product-card">
                 <div class="product-image-box">
-                    <img src="https://res.cloudinary.com/ducegbbqd/image/upload/v1782798982/iphone_15_xgdvmi.jpg" alt="Apple iPhone 14 structural overview detailing Emergency SOS and Action Mode camera module">
+                    <img src="https://res.cloudinary.com/ducegbbqd/image/upload/v1782798982/iphone_14_crrpt1.jpg" alt="Apple iPhone 14">
                 </div>
                 <div class="product-details">
                     <h2 class="product-title">Apple iPhone 14</h2>
@@ -527,7 +754,7 @@
                     </ul>
                     <div class="product-footer">
                         <span class="product-price">$799</span>
-                        <a href="products/iphone-14.html" class="btn-view">View Details</a>
+                        <button class="btn-view" onclick="openDetailsModal('iPhone 14', '$799', 'https://res.cloudinary.com/ducegbbqd/image/upload/v1782798982/iphone_14_crrpt1.jpg', '6.1-inch Super Retina XDR OLED', 'Apple A15 Bionic Enhanced Edition', '128GB / 256GB / 512GB', 'Dual 12MP System with Action Mode Video', '3279 mAh Intelligent Charge Retention')">View Details</button>
                     </div>
                 </div>
             </article>
@@ -535,7 +762,7 @@
             <!-- Card 9: Apple iPhone 14 Pro Max -->
             <article class="product-card">
                 <div class="product-image-box">
-                    <img src="https://res.cloudinary.com/ducegbbqd/image/upload/v1782798982/iphone_14_crrpt1.jpg" alt="Apple iPhone 14 Pro Max Deep Purple showcasing the active Dynamic Island interface">
+                    <img src="https://res.cloudinary.com/ducegbbqd/image/upload/v1782798983/iphone_14_pro_mjofqo.jpg" alt="Apple iPhone 14 Pro Max">
                 </div>
                 <div class="product-details">
                     <h2 class="product-title">Apple iPhone 14 Pro Max</h2>
@@ -546,7 +773,7 @@
                     </ul>
                     <div class="product-footer">
                         <span class="product-price">$999</span>
-                        <a href="products/iphone-14-pro-max.html" class="btn-view">View Details</a>
+                        <button class="btn-view" onclick="openDetailsModal('iPhone 14 Pro Max', '$999', 'https://res.cloudinary.com/ducegbbqd/image/upload/v1782798983/iphone_14_pro_mjofqo.jpg', '6.7-inch Always-On Super Retina Display', 'Apple A16 Bionic (4nm)', '128GB / 256GB / 512GB / 1TB', '48MP Main + Dual 12MP Ultra-Wide/Telephoto', '4323 mAh Enterprise Power Cell')">View Details</button>
                     </div>
                 </div>
             </article>
@@ -554,7 +781,7 @@
             <!-- Card 10: Apple iPhone 15 Pro -->
             <article class="product-card">
                 <div class="product-image-box">
-                    <img src="https://res.cloudinary.com/ducegbbqd/image/upload/v1782798982/iphone_15_pro_qkkjcc.jpg" alt="Apple iPhone 15 Pro in Natural Titanium showing side profile Action Button integration">
+                    <img src="https://res.cloudinary.com/ducegbbqd/image/upload/v1782798982/iphone_15_pro_qkkjcc.jpg" alt="Apple iPhone 15 Pro">
                 </div>
                 <div class="product-details">
                     <h2 class="product-title">Apple iPhone 15 Pro</h2>
@@ -565,7 +792,7 @@
                     </ul>
                     <div class="product-footer">
                         <span class="product-price">$1099</span>
-                        <a href="products/iphone-15-pro.html" class="btn-view">View Details</a>
+                        <button class="btn-view" onclick="openDetailsModal('iPhone 15 Pro', '$1099', 'https://res.cloudinary.com/ducegbbqd/image/upload/v1782798982/iphone_15_pro_qkkjcc.jpg', '6.1-inch Titanium Super Retina Display', 'Apple A17 Pro (3nm Pro Architecture)', '128GB / 256GB / 512GB / 1TB', '48MP Advanced Main Array with Optical Zoom', '3274 mAh USB-C Controller Setup')">View Details</button>
                     </div>
                 </div>
             </article>
@@ -573,7 +800,85 @@
         </div>
     </main>
 
-    <!-- Structural Bottom Grid Layer containing HTML Sitemap crawl mapping -->
+    <!-- CENTRAL DYNAMIC SYSTEM DETAIL OVERLAY WINDOW -->
+    <div id="detailsModal" class="info-modal" onclick="closeDetailsModal(event)">
+        <div class="modal-body">
+            <button class="modal-close-btn" onclick="hideModal()">&times;</button>
+            <div class="modal-img-container">
+                <img id="modalImg" src="" alt="Device View">
+            </div>
+            <h3 id="modalTitle" class="modal-phone-title">Phone Name</h3>
+            <div id="modalPrice" class="modal-phone-price">$000</div>
+            
+            <table class="modal-specs-table">
+                <tr>
+                    <td class="label-cell">Display Layout</td>
+                    <td id="specDisplay" class="value-cell">Data</td>
+                </tr>
+                <tr>
+                    <td class="label-cell">Processor Chip</td>
+                    <td id="specChip" class="value-cell">Data</td>
+                </tr>
+                <tr>
+                    <td class="label-cell">Storage Matrix</td>
+                    <td id="specStorage" class="value-cell">Data</td>
+                </tr>
+                <tr>
+                    <td class="label-cell">Camera Optics</td>
+                    <td id="specCamera" class="value-cell">Data</td>
+                </tr>
+                <tr>
+                    <td class="label-cell">Battery Core</td>
+                    <td id="specBattery" class="value-cell">Data</td>
+                </tr>
+            </table>
+
+            <a href="#contact" class="modal-action-btn" onclick="hideModal()">Inquire For Availability</a>
+        </div>
+    </div>
+
+    <!-- About Us Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2 class="section-title">About Us</h2>
+            <div class="about-content">
+                <p>Welcome to Zeeshan Mobile Zone, your ultimate environment for premium smart hardware diagnostics and collection tracking. We prioritize providing verified device mockups, testing layouts under extreme responsive resolutions to ensure zero visual layout breaking.</p>
+                <p>Our operation is dedicated to maintaining high-fidelity asset rendering pipelines. From historical milestones like iPhone X up to cutting-edge performance frameworks like the iPhone 15 Pro, we deliver optimized setups for technical testing and seamless structural evaluations.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Maps Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Contact & Location Map</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <h4>Testing Base Address</h4>
+                        <p>Zeeshan Mobile Zone, Tech Sandbox Quarter, Street 5-A, Faisalabad, Punjab, Pakistan</p>
+                    </div>
+                    <div class="contact-item">
+                        <h4>Direct Helpline lines</h4>
+                        <p>Mobile Contact: +92 300 9876543<br>Office Line: +92 41 5557777</p>
+                    </div>
+                    <div class="contact-item">
+                        <h4>Diagnostic Testing Email</h4>
+                        <p>sandbox-test@zeeshanmobilezone.com</p>
+                    </div>
+                    <div class="contact-item">
+                        <h4>System Active Windows</h4>
+                        <p>Monday - Saturday: 10:00 AM - 09:00 PM (Testing Offline on Sundays)</p>
+                    </div>
+                </div>
+                <div class="map-box">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d108993.4431872101!2d73.00330693998592!3d31.416431940984922!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x392242a8deae01df%3A0xb50c2c02e8412eab!2sFaisalabad%2C%20Pakistan!5e0!3m2!1sen!2s!4v1719740000000!5m2!1sen!2s" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Layer with updated Sitemap matching your Github Deployment link -->
     <footer class="footer">
         <div class="container footer-grid">
             <div class="footer-info">
@@ -584,27 +889,21 @@
             <div class="footer-links">
                 <h4>Categories</h4>
                 <ul>
-                    <li><a href="#">Apple iPhones</a></li>
-                    <li><a href="#">Pro Series Devices</a></li>
-                    <li><a href="#">Latest Flagships</a></li>
-                    <li><a href="#">Premium Accessories</a></li>
+                    <li><a href="#catalog">Apple iPhones</a></li>
+                    <li><a href="#catalog">Pro Series Devices</a></li>
+                    <li><a href="#catalog">Latest Flagships</a></li>
+                    <li><a href="#catalog">Premium Accessories</a></li>
                 </ul>
             </div>
 
-            <!-- HTML Sitemap Component Node for SEO Web Crawler Deep Indexing -->
+            <!-- HTML Sitemap URLs pointing strictly to your deployment domain mapping -->
             <div class="footer-links sitemap-column">
-                <h4>HTML Sitemap</h4>
+                <h4>HTML Sitemap Links</h4>
                 <ul>
-                    <li><a href="products/iphone-x.html">Apple iPhone X Specs</a></li>
-                    <li><a href="products/iphone-11.html">Apple iPhone 11 Specs</a></li>
-                    <li><a href="products/iphone-11-pro.html">Apple iPhone 11 Pro Specs</a></li>
-                    <li><a href="products/iphone-12.html">Apple iPhone 12 Specs</a></li>
-                    <li><a href="products/iphone-12-pro.html">Apple iPhone 12 Pro Specs</a></li>
-                    <li><a href="products/iphone-13.html">Apple iPhone 13 Specs</a></li>
-                    <li><a href="products/iphone-13-pro.html">Apple iPhone 13 Pro Specs</a></li>
-                    <li><a href="products/iphone-14.html">Apple iPhone 14 Specs</a></li>
-                    <li><a href="products/iphone-14-pro-max.html">Apple iPhone 14 Pro Max Specs</a></li>
-                    <li><a href="products/iphone-15-pro.html">Apple iPhone 15 Pro Specs</a></li>
+                    <li><a href="https://mainproblem62-stack.github.io/mobile-test/" target="_blank">Home Page Link</a></li>
+                    <li><a href="https://mainproblem62-stack.github.io/mobile-test/#catalog" target="_blank">Catalog Index</a></li>
+                    <li><a href="https://mainproblem62-stack.github.io/mobile-test/#about" target="_blank">About Profile</a></li>
+                    <li><a href="https://mainproblem62-stack.github.io/mobile-test/#contact" target="_blank">Contact Coordinates</a></li>
                 </ul>
             </div>
         </div>
@@ -614,6 +913,38 @@
             <p>Designed for search crawl compliance and dynamic layouts.</p>
         </div>
     </footer>
+
+    <!-- INTERACTIVE MODAL COMPONENT SCRIPT ENGINE -->
+    <script>
+        function openDetailsModal(title, price, imgSrc, display, chip, storage, camera, battery) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalPrice').innerText = price;
+            document.getElementById('modalImg').src = imgSrc;
+            document.getElementById('modalImg').alt = "Zeeshan Mobile Asset " + title;
+            
+            document.getElementById('specDisplay').innerText = display;
+            document.getElementById('specChip').innerText = chip;
+            document.getElementById('specStorage').innerText = storage;
+            document.getElementById('specCamera').innerText = camera;
+            document.getElementById('specBattery').innerText = battery;
+            
+            const modal = document.getElementById('detailsModal');
+            modal.classList.add('active');
+            document.body.classList.add('modal-open');
+        }
+
+        function hideModal() {
+            const modal = document.getElementById('detailsModal');
+            modal.classList.remove('active');
+            document.body.classList.remove('modal-open');
+        }
+
+        function closeDetailsModal(event) {
+            if (event.target.id === 'detailsModal') {
+                hideModal();
+            }
+        }
+    </script>
 
 </body>
 </html>
